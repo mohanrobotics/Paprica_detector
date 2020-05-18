@@ -13,6 +13,7 @@ It can be installed using
 
 ## Run
 
+# Detection 
 ```
 python3 paprika_detector.py
 
