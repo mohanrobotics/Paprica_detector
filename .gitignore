@@ -1,3 +1,17 @@
 *.h5
 *.jpg
 *.png
+logs/
+*.h5
+*.json
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+src/mrcnn/__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.egg-info/
+.ipynb_checkpoints
+
