@@ -209,7 +209,7 @@ def display_instances(image, boxes, masks, class_ids, class_names,
     if display:
         plt.show()
 
-    return masked_image
+    # return masked_image
 
 
 
