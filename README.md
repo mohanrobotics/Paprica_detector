@@ -1,7 +1,7 @@
 # Paprica_detector
 Paprica instance segmentation  using  Mask R-CNN.
 
-![Detections](/extracs/detections.gif)
+![Detections](/extras/detections.gif)
 
 
 ## Requirements
