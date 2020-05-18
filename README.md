@@ -1,0 +1,1 @@
+# Paprica_detector
