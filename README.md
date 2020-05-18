@@ -16,28 +16,26 @@ Install all the python dependencies using pip:
 
 Train a new model starting from pre-trained COCO weights
 ```
-python3 paprika.py train --dataset=/path/to/balloon/dataset --weights=coco
+python3 paprika.py train --dataset=data/input/ --weights=coco
 ```
 
 Resume training a model that you had trained earlier
 ```
-python3 paprika.py train --dataset=/path/to/balloon/dataset --weights=last
+python3 paprika.py train --dataset=data/input/ --weights=last
 ```
 
 Train a new model starting from ImageNet weights
 ```
-python3 paprika.py train --dataset=/path/to/balloon/dataset --weights=imagenet
+python3 paprika.py train --dataset=data/input/ --weights=imagenet
 ```
 
 The code in `paprika.py` is set to train for 3K steps (30 epochs of 100 steps each), and using a batch size of 2. 
 Update the schedule to fit your needs.
 
 
-## Run
-
-# Detection 
+## Detection using trained model
 ```
-python3 paprika_detector.py
+python3 paprika_detector.py -ip=data/input/val -sp=data/input/val_op
 
 Infer Mask R-CNN to detect paprika.
 
@@ -51,5 +49,6 @@ optional arguments:
                         Path to weights .h5 file of mask R-CNN model
   --video               Predict from video camera
   --gpu                 whether to use gpu
+  --display_pred        whether to display the prediction
   ```
 
