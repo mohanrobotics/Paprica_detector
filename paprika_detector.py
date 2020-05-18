@@ -33,7 +33,7 @@ def detect_and_display(model, images_path=None, save_path=None, display_pred=Fal
         model: trained mrcnn model
         images_path: images path for detection
         save_path: path to save the detected images
-        display_pred: whether to dispaly the prediction
+        display_pred (object): whether to dispaly the prediction
 
     Returns:
 
@@ -70,11 +70,11 @@ def detect_and_display(model, images_path=None, save_path=None, display_pred=Fal
                                                               line_thickness=4,
                                                               save_dir=save_dir)
 
-			if display_pred:
-				key = cv2.waitKey(2000)
-				cv2.imshow('frame', cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
-	if display_pred:
-		cv2.destroyAllWindows()
+            if display_pred:
+                key = cv2.waitKey(2000)
+                cv2.imshow('frame', cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
+    if display_pred:
+        cv2.destroyAllWindows()
 
 
 def display_video(model, camera_id=0, save_path=None):
@@ -139,15 +139,15 @@ if __name__ == '__main__':
 
     parser.add_argument('-ip',
                         '--images_path',
-                        default='data/input/',
+                        default='data/input/val',
                         type=str,
                         help='Directory containing images to be inferred')
 
-    parser.add_argument('-sp', '--save_path', default='data/output/',
+    parser.add_argument('-sp', '--save_path', default='data/output/val_op',
                         type=str, help='Path for storing the prediction')
 
     parser.add_argument('-wp', '--weights_path',
-                        default='data/mask_rcnn_paprika_final.h5',
+                        default="data/mask_rcnn_paprika_final.h5",
                         type=str,
                         help='Path to weights .h5 file of mask R-CNN model')
 
