@@ -7,9 +7,8 @@ Paprica instance segmentation  using  Mask R-CNN.
 * Tensorflow 
 * open-cv python
 
-It can be installed using 
-`pip install tensorflow==1.14.0.` (Change the version in which the inference graph is built)
-`pip install opencv-python`
+Install all the python dependencies using pip:
+`pip install -r requirements.txt`
 
 ## Run
 
