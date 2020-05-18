@@ -8,6 +8,7 @@ Paprica instance segmentation  using  Mask R-CNN.
 * open-cv python
 
 Install all the python dependencies using pip:
+
 `pip install -r requirements.txt`
 
 ## Run
