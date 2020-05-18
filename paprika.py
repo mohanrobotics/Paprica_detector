@@ -90,7 +90,7 @@ class PaprikaDataset(utils.Dataset):
         self.add_class("paprika", 1, "paprika")
 
         # Train or validation dataset?
-        assert subset in ["train", "val"]
+        assert subset in ["train", "val", "test"]
         dataset_dir = os.path.join(dataset_dir, subset)
 
         # Load annotations
