@@ -4,7 +4,7 @@
 logs/
 *.h5
 *.json
-
+*jpeg
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
