@@ -11,6 +11,28 @@ Install all the python dependencies using pip:
 
 `pip install -r requirements.txt`
 
+
+## Train the Paprika model
+
+Train a new model starting from pre-trained COCO weights
+```
+python3 paprika.py train --dataset=/path/to/balloon/dataset --weights=coco
+```
+
+Resume training a model that you had trained earlier
+```
+python3 paprika.py train --dataset=/path/to/balloon/dataset --weights=last
+```
+
+Train a new model starting from ImageNet weights
+```
+python3 paprika.py train --dataset=/path/to/balloon/dataset --weights=imagenet
+```
+
+The code in `paprika.py` is set to train for 3K steps (30 epochs of 100 steps each), and using a batch size of 2. 
+Update the schedule to fit your needs.
+
+
 ## Run
 
 # Detection 
