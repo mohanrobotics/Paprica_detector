@@ -1,5 +1,6 @@
 # Paprica_detector
 Paprica instance segmentation  using  Mask R-CNN.
+Most of core algorithm code was based on [Mask R-CNN implementation by Matterport, Inc. ](https://github.com/matterport/Mask_RCNN)
 
 ![Detections](/extras/detections.gif)
 
