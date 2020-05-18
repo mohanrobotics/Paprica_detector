@@ -13,9 +13,9 @@ It can be installed using
 
 ## Run
 
-`python3 paprika_detector.py -ip <path/to/image/dir> -op <path/to/saved_results/dir>`
+```
+python3 paprika_detector.py
 
-"""
 Infer Mask R-CNN to detect paprika.
 
 optional arguments:
@@ -28,6 +28,5 @@ optional arguments:
                         Path to weights .h5 file of mask R-CNN model
   --video               Predict from video camera
   --gpu                 whether to use gpu
-"""
-
+  ```
 
