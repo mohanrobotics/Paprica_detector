@@ -29,7 +29,7 @@ def detect_and_display(model, images_path=None, save_path=None ):
 
 
 	images_path_list = glob.glob(os.path.join(images_path, '*'))
-	print(images_path_list)
+	cv2.namedWindow('frame',cv2.WINDOW_AUTOSIZE)
 	for idx, image_path in enumerate(images_path_list):
 		if image_path.endswith('jpg' or 'png' or 'jpeg'):
 
@@ -44,7 +44,7 @@ def detect_and_display(model, images_path=None, save_path=None ):
 			if save_path:
 				save_dir = os.path.join(save_path,'prediction_{}.png'.format(idx))
 
-			visualize_boxes_and_labels_on_image_array(image,
+			image = visualize_boxes_and_labels_on_image_array(image,
                                       results['rois'],
                                       results['class_ids'],
                                       results['scores'],
@@ -55,20 +55,25 @@ def detect_and_display(model, images_path=None, save_path=None ):
                                       max_boxes_to_draw=20,
                                       min_score_thresh=.5,
                                       agnostic_mode=False,
-                                      line_thickness=4)
+                                      line_thickness=4,
+                                      save_dir = save_dir)
 
-			cv2.imwrite(save_dir, cv2.cvtColor(image.astype(np.uint8), cv2.COLOR_RGB2BGR))
+			
+			key = cv2.waitKey(2000)
+			cv2.imshow('frame',cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
+	cv2.destroyAllWindows()
 
 
 
 
-def display_video(model, camera_id = 0):
+
+def display_video(model, camera_id = 0, save_path = None):
 
 
 	cap = cv2.VideoCapture(camera_id)
 
 	count = 0 ; 
-
+	cv2.namedWindow('frame',cv2.WINDOW_AUTOSIZE)
 	while(True):
 		# Capture frame-by-frame
 		ret, frame = cap.read()
@@ -82,7 +87,7 @@ def display_video(model, camera_id = 0):
 		image = cv2.resize(image, dim, interpolation = cv2.INTER_AREA)
 		results = model.detect([image], verbose=1)[0]
 
-		visualize_boxes_and_labels_on_image_array(image,
+		image = visualize_boxes_and_labels_on_image_array(image,
                                           results['rois'],
                                           results['class_ids'],
                                           results['scores'],
@@ -96,16 +101,14 @@ def display_video(model, camera_id = 0):
                                           line_thickness=4)
 
 
-
+		
 		# Display the resulting frame
+		key = cv2.waitKey(1)
 		cv2.imshow('frame',cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
-		if cv2.waitKey(1) & 0xFF == ord('q'):
+		if key == 27:#if ESC is pressed, exit loop
+			cv2.destroyAllWindows()
 			break
 
-
-		# if key == 27:#if ESC is pressed, exit loop
-	 #        cv2.destroyAllWindows()
-	 #        break
 
 		count+=1 
 
@@ -156,7 +159,7 @@ print("Loading weights ", args.weights_path)
 model.load_weights(args.weights_path, by_name=True)
 
 if args.video:
-	display_video(model, camera_id = 0)
+	display_video(model, camera_id = 0 ,save_path = None)
 else:
 	detect_and_display(model, images_path=args.images_path, save_path = args.save_path)
 

@@ -706,7 +706,8 @@ def visualize_boxes_and_labels_on_image_array(image,
                                               max_boxes_to_draw=20,
                                               min_score_thresh=.5,
                                               agnostic_mode=False,
-                                              line_thickness=4):
+                                              line_thickness=4,
+                                              save_dir = None):
   """Overlay labeled boxes on an image with formatted scores and label names.
   This function groups boxes that correspond to the same location
   and creates a display string for each detection and overlays these
@@ -797,4 +798,9 @@ def visualize_boxes_and_labels_on_image_array(image,
         continue
       mask = instance_masks[:, :, i]
       image = apply_mask(image, mask , mask_colors[i])
+
+  if save_dir: 
+    plt.imsave(save_dir,image.astype(np.uint8))
+
+  return image.astype(np.uint8)
   
