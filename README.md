@@ -17,6 +17,41 @@ Install all the python dependencies using pip:
 ## Run Jupyter notebooks
 Open the `inspect_paprika_data.ipynb` or `inspect_paprika_model.ipynb` Jupter notebooks. You can use these notebooks to explore the dataset and run through the detection pipelie step by step.
 
+## Project notebooks
+├── data
+│   ├── input
+│   │   ├── README.md
+│   │   ├── train
+│   │   │   ├── <train images>
+│   │   └── val
+│   │       ├── <val images >
+│   │   ├── test
+│   │   │   ├── <test images>
+│   ├── mask_rcnn_paprika_final.h5
+│   └── output
+│       ├── README.md
+│       ├── test_op
+│       │   ├── <test images predicted saved here>
+│       └── val_op
+│           ├── <Val images predicted saved here>
+└── src
+    └── mrcnn
+        ├── config.py
+        ├── __init__.py
+        ├── model.py
+        ├── utils.py
+        └── visualize.py
+├── paprika.py
+├── paprika_detector.py
+├── paprika_evaluator.py
+├── inspect_paprika_data.ipynb
+├── inspect_paprika_model.ipynb
+├── requirements.txt
+├── extras
+│   └── detections.gif
+├── README.md
+
+
 
 ## Train the Paprika model
 
