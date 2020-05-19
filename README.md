@@ -36,12 +36,12 @@ Open the `inspect_paprika_data.ipynb` or `inspect_paprika_model.ipynb` Jupter no
 │       └── val_op
 │           ├── <Val images predicted saved here>
 └── src
-    └── mrcnn
-        ├── config.py
-        ├── __init__.py
-        ├── model.py
-        ├── utils.py
-        └── visualize.py
+|   └── mrcnn
+│       ├──config.py
+│       ├── __init__.py
+│       ├── model.py
+│       ├── utils.py
+│       ├── visualize.py
 ├── paprika.py
 ├── paprika_detector.py
 ├── paprika_evaluator.py
