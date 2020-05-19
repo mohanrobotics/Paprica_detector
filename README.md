@@ -24,8 +24,10 @@ Open the `inspect_paprika_data.ipynb` or `inspect_paprika_model.ipynb` Jupter no
 │   │   ├── README.md
 │   │   ├── train
 │   │   │   ├── <train images>
+│   │   │   ├── via_region_data.json
 │   │   └── val
 │   │       ├── <val images >
+│   │   │   ├── via_region_data.json
 │   │   ├── test
 │   │   │   ├── <test images>
 │   ├── mask_rcnn_paprika_final.h5
