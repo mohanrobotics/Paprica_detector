@@ -18,6 +18,7 @@ Install all the python dependencies using pip:
 Open the `inspect_paprika_data.ipynb` or `inspect_paprika_model.ipynb` Jupter notebooks. You can use these notebooks to explore the dataset and run through the detection pipelie step by step.
 
 ## Project notebooks
+```
 ├── data
 │   ├── input
 │   │   ├── README.md
@@ -50,8 +51,7 @@ Open the `inspect_paprika_data.ipynb` or `inspect_paprika_model.ipynb` Jupter no
 ├── extras
 │   └── detections.gif
 ├── README.md
-
-
+```
 
 ## Train the Paprika model
 
